@@ -2,17 +2,17 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
-export default function HomeScreen() {
+export default function SignupScreen() {
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to the Home Screen</Text>
+      <Text style={styles.text}>Signup to AzizFashions</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push("/home")}
       >
-        <Text style={styles.buttonText}>Go to Screen A</Text>
+        <Text style={styles.buttonText}>Go to Home</Text>
       </TouchableOpacity>
     </View>
   );

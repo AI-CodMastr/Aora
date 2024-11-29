@@ -1,41 +1,37 @@
-import { Tabs } from "expo-router";
+import React from "react";
 import { Image } from "react-native";
+import { Tabs } from "expo-router";
 
-// Import your PNG icons
 const icons = {
-  home: require("../../assets/icons/home.png"),
-  create: require("../../assets/icons/plus.png"),
-  bookmark: require("../../assets/icons/bookmark.png"),
-  profile: require("../../assets/icons/profile.png"),
+  home: require("../../assets/home.png"),       // Path to Home icon
+  profile: require("../../assets/account.png"), // Path to Profile icon
+  menu: require("../../assets/reorder.png"),     // Path to Cart icon
+  myCart: require("../../assets/shopping_cart.png"),     // Path to Cart icon
 };
 
-export default function Layout() {
+const Layout = () => {
   return (
     <Tabs
       screenOptions={({ route }) => ({
-        tabBarShowLabel: true, // Show the tab labels
-        tabBarActiveTintColor: "#FFA001", // Active color for both text and icon
-        tabBarInactiveTintColor: "#CDCDE0", // Inactive color for both text and icon
-        tabBarStyle: {
-          backgroundColor: "#161622",
-          borderTopWidth: 1,
-          borderTopColor: "#232533",
-        },
-        headerShown: false, // Hides the header
+        tabBarShowLabel: false,
+        headerShown: false,
         tabBarIcon: ({ focused }) => {
           const iconStyle = {
-            width: 22,
-            height: 22,
-            tintColor: focused ? "#FFA001" : "#CDCDE0", // Dynamic icon color
+            width: 24,
+            height: 24,
+            tintColor: focused ? "#e96e6e" : "#CDCDE0", // Dynamic color
           };
           return <Image source={icons[route.name]} style={iconStyle} />;
         },
       })}
     >
-      <Tabs.Screen name="home" options={{ title: "Home" }} />
-      <Tabs.Screen name="bookmark" options={{ title: "Bookmark" }} />
-      <Tabs.Screen name="create" options={{ title: "Create" }} />
-      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+      <Tabs.Screen name="home" title="Home"  />
+      <Tabs.Screen name="menu" title="Menu" />
+      <Tabs.Screen name="myCart" title="My Cart" />
+      <Tabs.Screen name="profile" title="Profile" />
+
     </Tabs>
   );
-}
+};
+
+export default Layout;

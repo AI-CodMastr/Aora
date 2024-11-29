@@ -1,0 +1,8 @@
+{
+    "products": [
+      { "id": 1, "name": "Jacket Jeans", "category": "Trending", "price": "$45.9", "isFavorite": false },
+      { "id": 2, "name": "Acrylic Sweater", "category": "New", "price": "$37.9", "isFavorite": false },
+      { "id": 3, "name": "Leather Jacket", "category": "Best Sellers", "price": "$85.0", "isFavorite": true }
+    ]
+  }
+  
